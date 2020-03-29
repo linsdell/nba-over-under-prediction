@@ -251,8 +251,6 @@ CM <- confusionMatrix(betting_data$predicted_result,betting_data$actual_result)
 return(CM$overall["Accuracy"])
 }
 
-s
-
 #### Export data ####
 
 selected_columns <- colnames(train)
