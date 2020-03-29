@@ -136,7 +136,7 @@ totalScoreEngineeredCorrelationCoeffs
 
 #### Multicollinearity Analysis ####
 
-#### Correlation analysis between predictors and Total Score f####
+#### Correlation analysis between predictors and Total Score####
 
 # Get only the numeric attributes
 numericValues <- train[,which(sapply(train, is.numeric))]
@@ -192,15 +192,7 @@ high_correlation_data$Total.Score <- NULL
 correlation_matrix <- cor(high_correlation_data)
 correlation_matrix
 
-
-
-
-
-
-
-
-
-#### Best Subset using stepAIC ####
+#### Best Subset using model selection ####
 regression <- lm(Total.Score~.,train)
 step <- stepAIC(regression, direction="both")
 
