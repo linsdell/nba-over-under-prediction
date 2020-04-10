@@ -1,4 +1,5 @@
 require(e1071)
+library(caret)
 
 #Read data
 data <- read.csv('nba_data_v3.csv', header = TRUE) # already feauture engineered
