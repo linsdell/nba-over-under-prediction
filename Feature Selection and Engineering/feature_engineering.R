@@ -1,5 +1,6 @@
 library(caret)
 library(MASS)
+library(e1071)
 data = read.csv("NBA_data.csv") #read the data
 
 #### Missing values in data ####
@@ -24,6 +25,24 @@ test <- data[c(640:800),]
 
 current_accuracy <- get_accuracy_of_given_data(train,test)
 current_accuracy
+
+# Look at the data
+skewness(train$Total.Score)
+# skewness of 0.2224 so total score is fairly symmetrical
+hist(train$Total.Score)
+# total score also looks symmetrical
+median(train$Total.Score)
+mean(train$Total.Score)
+
+skewness(train$Line)
+# skewness of 0.195557 so line is fairly symmetrical
+hist(train$Line)
+# line also looks symmetrical
+median(train$Line)
+mean(train$Line)
+
+# mean and median for line is less than the total score
+# indicates that on average taking the over bet would be the optimal choice 
 
 
 #### Feature Engineering ####
